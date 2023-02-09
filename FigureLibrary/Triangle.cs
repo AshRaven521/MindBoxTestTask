@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FigureLibrary
 {
@@ -15,18 +11,23 @@ namespace FigureLibrary
         {
             if (A + B <= C || A + C <= B || B + C <= A)
             {
-                throw new Exception("This is not a triangle!");
+                throw new Exception($"{this} is not a triangle!");
             }
 
             if ((A * A + B * B == C * C) || (A * A + C * C == B * B) || (C * C + B * B == A * A))
             {
-                Console.WriteLine("This is right triangle!");
+                Console.WriteLine($"{this} is right triangle!");
             }
 
             double semiPerimeter = (A + B + C) / 2.0;
             double square = Math.Sqrt(semiPerimeter * (semiPerimeter - A) * (semiPerimeter - B) * (semiPerimeter - C));
 
             return square;
+        }
+
+        public override string ToString()
+        {
+            return $"{A} <-> {B} <-> {C}";
         }
     }
 }
