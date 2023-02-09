@@ -11,7 +11,7 @@ namespace FigureConsole
             {
                 Radius = 5.0
             };
-            Console.WriteLine($"Circle area: {circle.Area()}");
+            Console.WriteLine($"Circle {circle} has area: {circle.Area()}");
 
             Triangle triangle = new Triangle
             {
@@ -20,7 +20,16 @@ namespace FigureConsole
                 C = 109.0
             };
 
-            Console.WriteLine($"Triangle area: {triangle.Area()}");
+            Console.WriteLine($"Triangle {triangle} has area: {triangle.Area()}");
+
+            Triangle wrongTriangle = new Triangle
+            {
+                A = 10.0,
+                B = 20.0,
+                C = 40.0
+            };
+
+            wrongTriangle.Area();
         }
     }
 }
